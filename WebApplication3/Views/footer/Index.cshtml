@@ -1,0 +1,62 @@
+﻿
+@model IEnumerable<WebApplication3.Models.footer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+
+
+        <div class="card mb-3">
+            <div class="card-header">
+
+                <h4><i class="fas fa-table"></i></h4> <br />
+                <div class="card-header">
+
+
+                    <a class="btn btn-primary mx-4" href="/footer/Create/">Yeni Ekle</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>RECENT NEWS</th>
+                                    <th>FOR CUSTOMER</th>
+                                    <th>CONTANT US</th>
+
+
+                                    <th>İŞLEMLER</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+
+                                        <td>@item.id</td>
+                                        <td>@item.Recent_News</td>
+                                        <td>@item.For_Customers</td>
+                                        <td>@item.Contact_Us</td>
+
+
+                                        <td>
+                                            <a href="/footer/Edit/@item.id" class="btn btn-success">Düzenle</a>|
+                                            <a href="/footer/Delete/@item.id" class="btn btn-danger"> Sil</a>
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

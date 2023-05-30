@@ -1,0 +1,53 @@
+﻿@model WebApplication3.Models.RezervasyonDurumu
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+
+        <div class="card mb-3">
+            <div class="card-header">
+
+                <h4><i class="fas fa-table"></i>Rezervasyon Durumu Ekle</h4> <br />
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    @using (Html.BeginForm("Create", "RezervasyonDurumu", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+
+
+
+                            <tr>
+                                <td>Rezervasyon Durumu</td>
+                                <td>
+
+                                    @Html.TextBoxFor(x => x.RezervasyonDurumu1, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.RezervasyonDurumu1)
+                                </td>
+                            </tr>
+
+
+
+                        </table>
+
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button class="btn btn-primary" type="submit">Kaydet</button>
+                                <button class="btn btn-danger" type="button"><a href="/RezervasyonDurumu/Index">İptal</button>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

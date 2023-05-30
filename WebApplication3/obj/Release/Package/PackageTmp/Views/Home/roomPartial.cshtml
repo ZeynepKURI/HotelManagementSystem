@@ -1,0 +1,8 @@
+﻿@model IEnumerable<WebApplication3.Models.room>
+
+<ul id="myMenu">
+    @foreach (var item in Model)
+    {
+    <li><a href="/Home/Rooms/@item.id">@item.Başlık</a> <span></span></li>
+    }
+    </ul>

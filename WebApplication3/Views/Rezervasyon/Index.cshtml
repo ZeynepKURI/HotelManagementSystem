@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WebApplication3.Models.Rezervasyon>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/AdminLayout.cshtml";
+    }
+
+
+    <div id="content-wrapper">
+        <div class="container-fluid">
+
+
+            <div class="card mb-3">
+                <div class="card-header">
+
+                    <h4><i class="fas fa-table"></i>Rezervasyon Listesi</h4> <br />
+                    <div class="card-header">
+
+
+                        <a class="btn btn-primary mx-4" href="/Rezervasyon/Create/">Yeni Rezervasyon Ekle</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Ad</th>
+                                        <th>Soyad</th>
+                                        <th>Adres</th>
+                                        <th>Email</th>
+                                        <th>Oda Türü</th>
+                                        <th>Varış Tarihi</th>
+                                        <th>Ayrılış Tarihi</th>
+                                        <th>Konuk Sayısı</th>
+
+
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+
+
+                                            <td>@item.Ad</td>
+                                            <td>@item.Soyad</td>
+                                            <td>@item.Adres</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.OdaTürüid</td>
+                                            <td>@item.VarışTarihi</td>
+                                            <td>@item.AyrılışTarihi</td>
+                                            <td>@item.KonukSayısı</td>
+
+
+                                            <td>
+                                                <a href="/Rezervasyon/Edit/@item.id" class="btn btn-success">Düzenle</a>|
+                                                <a href="/Rezervasyon/Delete/@item.id" class="btn btn-danger"> Sil</a>
+                                            </td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

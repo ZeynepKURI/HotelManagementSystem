@@ -1,0 +1,122 @@
+﻿
+@model WebApplication3.Models.Rezervasyon
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+
+        <div class="card mb-3">
+            <div class="card-header">
+
+                <h4><i class="fas fa-table"></i>Rezervasyon Formu</h4> <br />
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    @using (Html.BeginForm("Edit", "Rezervasyon", FormMethod.Post))
+                    {
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+
+
+
+                            <tr>
+                                <td>Ad</td>
+                                <td>
+                                    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Ad)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Soyad</td>
+                                <td>
+
+                                    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Soyad)
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Adres</td>
+                                <td>
+
+                                    @Html.TextBoxFor(x => x.Adres, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Adres)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>
+                                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Email)
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>Oda Türü</td>
+                                <td>
+
+
+                                    @Html.DropDownListFor(x => x.OdaTürüid, (List<SelectListItem>)ViewBag.Values, new { @class = "form-control" })
+                                </td>
+                            </tr>
+
+                            <tr>
+
+
+                                <td>Rezervasyon Durumu</td>
+                                <td>
+                                    @Html.DropDownListFor(x => x.RezervasyonDurumuid, (List<SelectListItem>)ViewBag.Valuess, new { @class = "form-control" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Varış Tarih</td>
+                                <td>
+                                    @Html.TextBoxFor(x => x.VarışTarihi, new { @class = " timepicker form-control" })
+                                    @Html.ValidationMessageFor(x => x.VarışTarihi)
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ayrılış Tarihi</td>
+                                <td>
+                                    @Html.TextBoxFor(x => x.AyrılışTarihi, new { @class = "timepicker form-control" })
+                                    @Html.ValidationMessageFor(x => x.AyrılışTarihi)
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Konuk Sayısı</td>
+                                <td>
+                                    @Html.TextBoxFor(x => x.KonukSayısı, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.KonukSayısı)
+
+                                </td>
+                            </tr>
+
+
+
+                        </table>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button class="btn btn-primary" type="submit">Kaydet</button>
+                                <button class="btn btn-danger" type="button"><a href="/Rezervasyon/Index">İptal</button>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

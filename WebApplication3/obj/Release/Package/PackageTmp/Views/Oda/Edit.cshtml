@@ -1,0 +1,88 @@
+﻿@model WebApplication3.Models.Oda
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+
+        <div class="card mb-3">
+            <div class="card-header">
+
+                <h4><i class="fas fa-table"></i>Oda Ekleme Formu</h4> <br />
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    @using (Html.BeginForm("Edit", "ODA", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+
+
+
+                            <tr>
+
+                                <td>Oda Türü</td>
+                                <td>
+
+
+                                    @Html.DropDownListFor(x => x.OdaTürüid, (List<SelectListItem>)ViewBag.Values, new { @class = "form-control" })
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td>Oda Numarası</td>
+                                <td>
+
+                                    @Html.TextBoxFor(x => x.OdaNumarası, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.OdaNumarası)
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Oda Ücreti</td>
+                                <td>
+
+                                    @Html.TextBoxFor(x => x.OdaÜcreti, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.OdaÜcreti)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kapasite</td>
+                                <td>
+                                    @Html.TextBoxFor(x => x.Kapasite, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Kapasite)
+                                </td>
+                            </tr>
+
+
+                            <tr>
+
+                                <td>Rezervasyon Durumu</td>
+                                <td>
+                                    @Html.DropDownListFor(x => x.RezervasyonDurumuid, (List<SelectListItem>)ViewBag.Valuess, new { @class = "form-control" })
+                                </td>
+                            </tr>
+
+
+                        </table>
+
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button class="btn btn-primary" type="submit">Kaydet</button>
+                                <button class="btn btn-danger" type="button"><a href="/Oda/Index">İptal</button>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

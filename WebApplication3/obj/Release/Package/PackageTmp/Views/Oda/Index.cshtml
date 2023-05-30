@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebApplication3.Models.Oda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+
+
+        <div class="card mb-3">
+            <div class="card-header">
+
+                <h4><i class="fas fa-table"></i>Oda listesi</h4> <br />
+                <div class="card-header">
+
+
+                    <a class="btn btn-primary mx-4" href="/Oda/Create/">Yeni Oda Ekle</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Oda Türü</th>
+                                    <th>Oda Numarası</th>
+                                    <th>Oda Ücreti</th>
+                                    <th>Kapasite</th>
+                                    <th>Rezervasyon Durumu</th>
+
+                                    <th>İŞLEMLER</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+
+                                        <td>@item.OdaTürüid</td>
+                                        <td>@item.OdaNumarası</td>
+                                        <td>@item.OdaÜcreti</td>
+                                        <td>@item.Kapasite</td>
+                                        <td>@item.RezervasyonDurumuid</td>
+
+                                        <td>
+                                            <a href="/Oda/Edit/@item.id" class="btn btn-success">Düzenle</a>|
+                                            <a href="/Oda/Delete/@item.id" class="btn btn-danger"> Sil</a>
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

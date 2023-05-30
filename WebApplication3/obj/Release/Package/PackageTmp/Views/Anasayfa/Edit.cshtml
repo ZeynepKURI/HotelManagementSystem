@@ -1,0 +1,72 @@
+﻿@model WebApplication3.Models.Home
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+
+        <div class="card mb-3">
+            <div class="card-header">
+
+                <h4><i class="fas fa-table"></i></h4> <br />
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    @using (Html.BeginForm("Edit", "Anasayfa", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+
+
+
+                            <tr>
+
+                                <td>Başlık</td>
+                                <td>
+
+                                    @Html.TextBoxFor(x => x.Başlık, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Başlık)
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Açıklama</td>
+                                <td>
+
+                                    @Html.TextBoxFor(x => x.Açıklama, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Açıklama)
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td> Resim</td>
+                                <td>
+
+
+                                    <div class="col-md-10">
+                                        <input type="file" name="resim" accept=".jpg,.png,.jpeg" class="form-control" />
+                                        @Html.ValidationMessageFor(model => model.Resim, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button class="btn btn-primary" type="submit">Kaydet</button>
+                                <button class="btn btn-danger" type="button"><a href="/Anasayfa/Index">İptal</button>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

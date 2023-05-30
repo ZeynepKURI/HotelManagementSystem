@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication3.Models.RezervasyonDurumu>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+
+        <div class="card mb-3">
+            <div class="card-header">
+
+                <h4><i class="fas fa-table"></i>Rezervasyon Durumu Listesi</h4> <br />
+                <div class="card-header">
+
+
+                    <a class="btn btn-primary mx-4" href="/RezervasyonDurumu/Create/">Yeni Rezervasyon Durumu Ekle</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Rezervasyon Durumu</th>
+
+
+                                    <th>İşlemler</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+
+                                        <td>@item.RezervasyonDurumuid</td>
+                                        <td>@item.RezervasyonDurumu1</td>
+
+
+                                        <td>
+
+                                            <a href="/RezervasyonDurumu/Edit/@item.RezervasyonDurumuid" class="btn btn-success">Düzenle</a>| <a href="/RezervasyonDurumu/Delete/@item.RezervasyonDurumuid" class="btn btn-danger"> Sil</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

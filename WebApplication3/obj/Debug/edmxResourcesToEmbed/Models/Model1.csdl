@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="otelyönetimiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="başlık" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="açıklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="resim" Type="String" MaxLength="950" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Adminid" />
+    </Key>
+    <Property Name="Adminid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullanıcıAdı" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Şifre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="footer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Recent_News" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="For_Customers" Type="String" MaxLength="310" FixedLength="false" Unicode="true" />
+    <Property Name="Contact_Us" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="galeri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="resim" Type="String" MaxLength="950" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Hakkımızda">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="başlık" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="açıklama" Type="String" MaxLength="950" FixedLength="false" Unicode="true" />
+    <Property Name="resim1" Type="String" MaxLength="950" FixedLength="false" Unicode="true" />
+    <Property Name="resim2" Type="String" MaxLength="950" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Home">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Başlık" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Açıklama" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Resim" Type="String" MaxLength="950" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="İletişim">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Adres" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="TelN" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Whatsapp" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Oda">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RezervasyonDurumuid" Type="Int32" />
+    <Property Name="OdaTürüid" Type="Int32" />
+    <Property Name="OdaNumarası" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OdaÜcreti" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Kapasite" Type="String" MaxLength="310" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OdaTürü">
+    <Key>
+      <PropertyRef Name="OdaTürüid" />
+    </Key>
+    <Property Name="OdaTürüid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OdaTürü1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Rezervasyon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Adres" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VarışTarihi" Type="DateTime" Precision="0" />
+    <Property Name="AyrılışTarihi" Type="DateTime" Precision="0" />
+    <Property Name="KonukSayısı" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OdaTürüid" Type="Int32" />
+    <Property Name="RezervasyonDurumuid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RezervasyonDurumu">
+    <Key>
+      <PropertyRef Name="RezervasyonDurumuid" />
+    </Key>
+    <Property Name="RezervasyonDurumuid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RezervasyonDurumu1" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="room">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Başlık" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Resim" Type="String" MaxLength="950" FixedLength="false" Unicode="true" />
+    <Property Name="Açıklama" Type="String" MaxLength="850" FixedLength="false" Unicode="false" />
+    <Property Name="Fiyat" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Service1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="başlık1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="açıklama1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="resim1" Type="String" MaxLength="950" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="otelyönetimiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="About" EntityType="Self.About" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" />
+    <EntitySet Name="footer" EntityType="Self.footer" />
+    <EntitySet Name="galeri" EntityType="Self.galeri" />
+    <EntitySet Name="Hakkımızda" EntityType="Self.Hakkımızda" />
+    <EntitySet Name="Home" EntityType="Self.Home" />
+    <EntitySet Name="İletişim" EntityType="Self.İletişim" />
+    <EntitySet Name="Oda" EntityType="Self.Oda" />
+    <EntitySet Name="OdaTürü" EntityType="Self.OdaTürü" />
+    <EntitySet Name="Rezervasyon" EntityType="Self.Rezervasyon" />
+    <EntitySet Name="RezervasyonDurumu" EntityType="Self.RezervasyonDurumu" />
+    <EntitySet Name="room" EntityType="Self.room" />
+    <EntitySet Name="Service1" EntityType="Self.Service1" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+  </EntityContainer>
+</Schema>

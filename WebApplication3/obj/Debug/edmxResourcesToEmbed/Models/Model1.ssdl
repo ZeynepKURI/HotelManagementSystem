@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="otelyönetimiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="başlık" Type="varchar" MaxLength="50" />
+    <Property Name="açıklama" Type="nvarchar" MaxLength="500" />
+    <Property Name="resim" Type="nvarchar" MaxLength="950" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Adminid" />
+    </Key>
+    <Property Name="Adminid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullanıcıAdı" Type="varchar" MaxLength="150" />
+    <Property Name="Şifre" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="footer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Recent News" Type="varchar" MaxLength="500" />
+    <Property Name="For Customers" Type="nvarchar" MaxLength="310" />
+    <Property Name="Contact Us" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="galeri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="resim" Type="nvarchar" MaxLength="950" />
+  </EntityType>
+  <EntityType Name="Hakkımızda">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="başlık" Type="nvarchar" MaxLength="500" />
+    <Property Name="açıklama" Type="nvarchar" MaxLength="950" />
+    <Property Name="resim1" Type="nvarchar" MaxLength="950" />
+    <Property Name="resim2" Type="nvarchar" MaxLength="950" />
+  </EntityType>
+  <EntityType Name="Home">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Başlık" Type="varchar" MaxLength="50" />
+    <Property Name="Açıklama" Type="varchar" MaxLength="500" />
+    <Property Name="Resim" Type="nvarchar" MaxLength="950" />
+  </EntityType>
+  <EntityType Name="İletişim">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adres" Type="varchar" MaxLength="350" />
+    <Property Name="Email" Type="varchar" MaxLength="250" />
+    <Property Name="TelN" Type="varchar" MaxLength="150" />
+    <Property Name="Whatsapp" Type="varchar" MaxLength="350" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Oda">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RezervasyonDurumuid" Type="int" />
+    <Property Name="OdaTürüid" Type="int" />
+    <Property Name="OdaNumarası" Type="varchar" MaxLength="50" />
+    <Property Name="OdaÜcreti" Type="nchar" MaxLength="100" />
+    <Property Name="Kapasite" Type="nchar" MaxLength="310" />
+  </EntityType>
+  <EntityType Name="OdaTürü">
+    <Key>
+      <PropertyRef Name="OdaTürüid" />
+    </Key>
+    <Property Name="OdaTürüid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OdaTürü" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Rezervasyon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="varchar" MaxLength="50" />
+    <Property Name="Soyad" Type="varchar" MaxLength="50" />
+    <Property Name="Adres" Type="varchar" MaxLength="150" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="VarışTarihi" Type="date" />
+    <Property Name="AyrılışTarihi" Type="date" />
+    <Property Name="KonukSayısı" Type="varchar" MaxLength="50" />
+    <Property Name="OdaTürüid" Type="int" />
+    <Property Name="RezervasyonDurumuid" Type="int" />
+  </EntityType>
+  <EntityType Name="RezervasyonDurumu">
+    <Key>
+      <PropertyRef Name="RezervasyonDurumuid" />
+    </Key>
+    <Property Name="RezervasyonDurumuid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RezervasyonDurumu" Type="varchar" MaxLength="350" />
+  </EntityType>
+  <EntityType Name="room">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Başlık" Type="varchar" MaxLength="150" />
+    <Property Name="Resim" Type="nvarchar" MaxLength="950" />
+    <Property Name="Açıklama" Type="varchar" MaxLength="850" />
+    <Property Name="Fiyat" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Service1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="başlık1" Type="varchar" MaxLength="50" />
+    <Property Name="açıklama1" Type="nvarchar" MaxLength="500" />
+    <Property Name="resim1" Type="nvarchar" MaxLength="950" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="otelyönetimiModelStoreContainer">
+    <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="footer" EntityType="Self.footer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="galeri" EntityType="Self.galeri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hakkımızda" EntityType="Self.Hakkımızda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Home" EntityType="Self.Home" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="İletişim" EntityType="Self.İletişim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Oda" EntityType="Self.Oda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OdaTürü" EntityType="Self.OdaTürü" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rezervasyon" EntityType="Self.Rezervasyon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RezervasyonDurumu" EntityType="Self.RezervasyonDurumu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="room" EntityType="Self.room" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service1" EntityType="Self.Service1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

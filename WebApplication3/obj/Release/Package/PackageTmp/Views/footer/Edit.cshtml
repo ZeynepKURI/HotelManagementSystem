@@ -1,0 +1,70 @@
+﻿@model WebApplication3.Models.footer
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+
+        <div class="card mb-3">
+            <div class="card-header">
+
+                <h4><i class="fas fa-table"></i>Footer Ekleme Formu</h4> <br />
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    @using (Html.BeginForm("Edit", "footer", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                    {
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+
+
+
+                            <tr>
+
+                                <td>Recent News</td>
+                                <td>
+
+                                    @Html.TextBoxFor(x => x.Recent_News, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Recent_News)
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>For Customers</td>
+                                <td>
+
+                                    @Html.TextBoxFor(x => x.For_Customers, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.For_Customers)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Contanct Us</td>
+                                <td>
+                                    @Html.TextBoxFor(x => x.Contact_Us, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Contact_Us)
+                                </td>
+                            </tr>
+
+
+
+
+
+                        </table>
+
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button class="btn btn-primary" type="submit">Kaydet</button>
+                                <button class="btn btn-danger" type="button"><a href="/footer/Index">İptal</button>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
